@@ -1,0 +1,24 @@
+
+.emni{
+
+    margin-top: 42%;
+    margin-left: 93% ;
+    size: 40px;
+    width: fit-content;
+    background-color: transparent;
+    z-index: 1;
+
+  
+}
+
+.fa-shopping-basket{
+
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+.fa-cart-plus{
+
+    font-size: 30px ;
+    margin-top: 25%;
+    color: aliceblue;
+}
