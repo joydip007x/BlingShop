@@ -10,6 +10,7 @@ export const registerUser=(user)=>async dispatch=>{
         const response=await axios.post('/storeAPI/users/register', user)
         console.log('userAction: ',response)
         dispatch({type:'USER_REGISTER_SUCCESS'})
+        window.location.href="/login"
 
     }
     catch(error){
@@ -28,22 +29,22 @@ export const loginUser=(user)=>async dispatch=>{
         localStorage.setItem('currentUser',JSON.stringify(response.data))
         localStorage.removeItem('currentAdmin');
         
-        let pp=response.data;
-        console.log('BANK getUID : ',pp.email)
-        const response2=await axios.get('/bankAPI/users/getUID', {params: {user: pp.email}})
-        console.log('BANK getUID : ',response2.data)
-        if(response2.data ){
-         dispatch({type:'USER_FIND_BANK_SUCCESS'})
-         localStorage.setItem('currentUserUID',JSON.stringify(response2.data))
-         await delay(2500);
+        // let pp=response.data;
+        // console.log('BANK getUID : ',pp.email)
+        // const response2=await axios.get('/storeAPI/users/getUID', {params: {user: pp.email}})
+        // console.log('BANK getUID : ',response2.data)
+        // if(response2.data ){
+        //  dispatch({type:'USER_FIND_BANK_SUCCESS'})
+        //  localStorage.setItem('currentUserUID',JSON.stringify(response2.data))
+        //  await delay(2500);
 
-         window.location.href='/'
-        }
-        else { 
-            dispatch({type:'USER_FIND_BANK_FAILED',payload: response2})
-            await delay(2500);
-            window.location.href='/registerUID'
-        }
+        //  window.location.href='/'
+        // }
+        // else { 
+        //     dispatch({type:'USER_FIND_BANK_FAILED',payload: response2})
+        //     await delay(2500);
+        //     window.location.href='/empty'
+        // }
         await delay(2500);
         window.location.href='/'
     

@@ -14,9 +14,9 @@ export default function Navbar() {
   const {currentAdmin}= adminState
 
   const dispatch= useDispatch()
-  function doIT(){
-    dispatch(logoutUser())
+  function doIT(){    
     dispatch(logoutAdmin())
+    dispatch(logoutUser())
 
   }
   console.log("Dispatch ",currentAdmin,currentUser)
@@ -48,6 +48,7 @@ export default function Navbar() {
          
          <li className="nav-item" id="nav-home-icon">
               <a className="nav-link " href="/" > 
+              <i class="fa fa-university" id="icon33" aria-hidden="true"></i>
               </a>
         </li>
 

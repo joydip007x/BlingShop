@@ -6,7 +6,11 @@
      margin-right: 150px !important ;
 
 }
+#icon33{
+   margin-top: -3px !important;
+   font-size: 20px !important;
 
+}
 #okok{
      margin-right: 40%  !important;
      margin-top: 40% !important ;
@@ -29,4 +33,8 @@
 
 .dropdown{
      background-color: aqua !important;
+}
+
+.fa-university{
+     font-size: 20px !important;
 }

@@ -42,7 +42,6 @@ export const getAllOrders=()=>async dispatch=>{
 
     try {
         const response = await axios.get('/storeAPI/orders/getAllOrders')
-        console.log(response)
         dispatch({type:'GET_All_ORDER_SUCCESS', payload: response.data})
 
     } catch (error) {
@@ -60,7 +59,7 @@ export const verifyAOrder=(orderid)=>async dispatch=>{
         const response = await axios.post('/storeAPI/orders/VerifyAOrder',orderid)
         console.log(response)
         dispatch({type:'VERIFY_A_ORDER_SUCCESS', payload: response.data})
-        
+        await delay(2500);
         window.location.href='/orders'
         
 
@@ -74,7 +73,7 @@ export const updateAdminBalance =(email,amount) => async dispatch=>{
 
     try {
         console.log("adminAction Up ",email,amount );
-        const accUpdate = await axios.post('/bankAPI/users/updateAdminBalance',{email,amount})
+        const accUpdate = await axios.post('/storeAPI/users/updateAdminBalance',{email,amount})
         
     } catch (error) {
         
@@ -85,7 +84,8 @@ export const updateBalance =(email,amount) => async dispatch=>{
 
     try {
         // console.log("adminAction Up ",email,amount );
-        const accUpdate = await axios.post('/bankAPI/users/updateBalance',{email,amount})
+        const accUpdate = await axios.post('/storeAPI/users/updateBalance',{email,amount})
+        await delay(2500);
         
     } catch (error) {
         

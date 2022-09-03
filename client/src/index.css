@@ -35,7 +35,7 @@ input{
 input:focus{
 
   border-color: #000 !important;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px brown !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(0, 0, 0) !important;
   outline: 0 none !important;
 }
 .registerButton{
@@ -80,7 +80,8 @@ input:focus{
 
   left: 00%;
   position: absolute;
-
+  color: #000 !important;
+  font-size: 30px !important;
 }
 #cartPageIconPlus{
   color:green;
@@ -112,7 +113,7 @@ input:focus{
   font-size: 30px;
   font-weight: lighter;
   margin-top: 220px !important;
-
+  margin-left: 00% !important;
 }
 #allhr{
   
@@ -126,11 +127,21 @@ input:focus{
 }
 #noItemDiv{
 
-  
+   margin-left: 5% !important;
+}
+.myL{
+  margin-top: -8px !important;
+}
+#Qid{
+
+   width: 150px !important;
+   margin-bottom: -20px !important;
 }
 .cartContainer{
+   
+  margin-top: 4% !important;
+  margin-right: -39.9% !important;
 
-  
 }
 #myCartText{
   
@@ -155,12 +166,17 @@ input:focus{
    
   
   font-weight: 600 !important;
-  color: green !important;
+  color: rgb(255, 255, 255) !important;
   
 }
 #cartPageIconTrash{
-  color:red;
+  margin-top: 320% !important;
   font-size: 22px !important;
+  padding-right: 10% !important;
+}
+#cartPageIconTrash:hover{
+  
+  cursor: pointer;
   
 }
 #cartPage_defQ{
@@ -175,9 +191,10 @@ input:focus{
 
 #cartPageProdImg{
 
-  height: 80px !important;
-  width: 80px !important;
-
+  height: 100px !important;
+  width: 130px !important;
+  margin-top: 20px !important;
+  margin-left: 10% !important;
 }
 /*center maker */
 #uReginputHolder{
@@ -223,6 +240,7 @@ input:focus{
 }
 .homescreenContainer{
   margin-right: 0% !important;
+  height: 600px !important;
 }
 #clicktoLog{
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -244,13 +262,18 @@ input:focus{
   margin-left:  46%;
   
 }
+#variTxt{
+
+  color: wheat;
+}
 .html_h1{
 
   font-size: 17px !important;
   flex-wrap: wrap !important;
   flex-shrink: initial !important;
   font-family: "monospace" ;
-  
+  margin-top: 4% ;
+  color: wheat;
 }
 
 html_banner{
@@ -283,20 +306,53 @@ html_banner{
 .flex-container{
 
    display: flex !important;
+   color: whitesmoke !important;
+   background-color: transparent !important;
+   /* background-image: linear-gradient(to top right, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+
    
 }
 
 .flex_class_option{
   
-   background-color: #FDEFF4 !important;
+   background-color: transparent!important;
+   border: auto rgba(255,255,255,1) !important;
+   color:  white !important;
 }
+#opid{
 
+  color: wheat !important;
+  background-color: rgb(219, 31, 31);
+}
 .btn{
 
-  background-color: red !important;
+  background-color: rgb(234, 33, 33) !important;
   color: whitesmoke !important;
+  
 }
 
+.mvAc{
+   margin-left: 50px !important;
+   padding-block-end: 5px;
+   padding-block-start: 10px;
+   /* padding-inline-start: 90px; */
+}
+.editBTN{
+
+  background-color: rgb(182, 217, 219) !important;
+  color: rgb(0, 0, 0) !important;
+  height: 30px;
+  font-size: 20px ;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+.editBTN:hover{
+
+  background-color: rgb(106, 97, 97) !important;
+  color: rgb(247, 247, 247) !important;
+  font-size: 21px ;
+
+}
 select{
 
   box-shadow: none !important;
@@ -305,29 +361,32 @@ select{
 
 .Spizza_container{
 
-
-  box-shadow: -10px 10px 30px 5px #aca5a5 ;
+  background-image: linear-gradient(to top bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  box-shadow: -10px 10px 30px 1px #000000 ;
   
 }
 .Pizprices{
 
    padding-top : 8px !important;
-   font-family: "Ubuntu" ;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
    flex-shrink: initial !important;
    font-size: 16.2px !important;
    min-width: 180px !important;
    max-width: 190px !important;
    font-weight: bold !important;
+   color: whitesmoke;
 }
+html_h2{
 
+  color: whitesmoke !important;
+  font-size: 20px !important;
+}
 .modal_window{
 
    margin-top: 80px !important;
-   object-fit: contain !important;
-   box-shadow: auto rgba(255,255,255,1) !important;
+ 
    /* text-shadow: 0px 0px 10px rgba(51, 51, 51, 0.9) !important; */
-   background: rgba(17, 17, 17, 0.9) !important;
-   opacity: 0.9;
+  
 }
 
 .modal-image{
@@ -352,49 +411,57 @@ custom_h1{
    font-weight: bold !important;
    padding-top: 10px !important;
    text-align-last: left !important;
+   font-size: 24px !important;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 .type2_text{
   
   display: flex;
   text-align-last: left !important;
-
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size:  20px !important;
 }
 .type3_text{
 
-  font-family:'Fredoka One' !important;
+  font-family: 'Ubuntu';
 
   position: fixed !important;
   font-size: 30px !important;
-  
-  left: 70% !important;
+  left: 44% !important;
   margin-top: 15px !important;
-  top: 50% !important;
+  top: 82% !important;
 }
 
 .subtotal{
   
-  position: relative!important;
-  transform: translateX(center);
-  transform: translateY(center);
+  margin-top: 80% !important;
 
 }
 .btn_checkout{
 
-  height: 40px;
-  width:  105px;
+  height: 60px;
+  width:  105px !important;
   position: fixed !important;
-  left: 75% !important;
-  top: 57%;
-  background-color: red;
+  left: 48% !important;
+  top: 89%;
+  background-color: rgb(0, 0, 0);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: larger;
   color: #FDEFF4;
 
 }
+
+.fa-ban{
+  color: rgb(212, 255, 0) !important;
+  margin-top: 40% !important;
+}
 .UnitpriceFlex{
 
-   padding: 10px !important;
+   padding-left: 15px !important;
+   padding-top: -15px !important;
+   padding-bottom: 05px !important;
+   margin-top: -15px !important;
 }
 /* Loading CSS ANIMATION  */
 

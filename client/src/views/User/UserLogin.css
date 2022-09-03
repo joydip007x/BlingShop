@@ -222,8 +222,13 @@ button:focus {
 
 .fa-user-plus{
 
-  color: #000;
-  font-size: 90px;
-  margin-left: 260%;
-  margin-top: 75%;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  margin-left: 235%;
+  margin-top: 89%;
+}
+.fa-user-plus:hover{
+
+  color:   #a8eb12;
+
 }

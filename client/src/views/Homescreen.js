@@ -20,14 +20,16 @@ export default function Homescreen() {
   useEffect(() => {
 
     if (!logState){
-      
-       dispatch(getAllProducts())
        checkUser()
+       dispatch(getAllProducts())
     }
 }, [])
 
 function redi(){
   window.location.href="/addItem"
+}
+function redi2(){
+  window.location.href="/orders"
 }
   //  console.log(logState)
  
@@ -37,10 +39,11 @@ function redi(){
 
         { logState ? 
           (<div><p>  
-                <div> 
-                  <h3 id='noItemsinCart'>Welcome ,You are Logged in as an Administrator</h3> 
-                  <h3 id='noItemsinCart2'>Visit <a href= '/orders' >Orders</a> to Verify and Forward Orders to Suppliers </h3> 
-                  <i class="fas fa-cart-plus" onClick={ redi }>ADD ITEM</i>
+                <div id="some1" className='shadow-lg p-3 mb-5 rounded'> 
+                  <h3> Admin's Roles : </h3>
+                  <i class="fa fa-list-ul fa-2x" aria-hidden="true"  onClick={ redi2 }> <gg>VERIFY ORDERS</gg></i>
+                  <br></br>
+                  <i class="fas fa-cart-plus" onClick={ redi }> <gg>ADD ITEM</gg></i>
                 </div>  
            </p></div> ): 
         
@@ -48,7 +51,7 @@ function redi(){
             error ? (<html_h1>Wrong</html_h1>):
             (
               products.map(product => {
-              return <div  className='col-md-3 m-3 'key={product._id}>
+              return <div  className='col-md-4 m-6 mt-3 margTop'key={product._id}>
                 <Product product={product} />
               </div>
             })
@@ -59,7 +62,7 @@ function redi(){
            { !logState &&
             <Card className="emni shadow-lg p-3 mb-5 rounded" id="nav_link_cart">
               <a className="nav-link " href="/cart" >
-              <i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
+              <i class="fa fa-shopping-basket fa-2x" aria-hidden="true">CART</i>
               </a>
             </Card>}
         </div>
@@ -74,10 +77,8 @@ export const notify = (callId,msg,timex) => {
 export const checkUser=()=>{
   if (!localStorage.getItem('currentUser')){
   
-    setTimeout(() =>   window.location.href='/login', 6000);
-    notify('noUser',"Please Login First",1000)
-    notify('redirect',"You will be redirected to Login Page",2000)
-
+    setTimeout(() =>   window.location.href='/login', 50);
+  
 
   }
 }

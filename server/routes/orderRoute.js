@@ -7,50 +7,14 @@ const Order = require("../models/orderModel")
 
 router.post('/placeOrder', async(req, res)=> { 
 
-    const {token, subtotal,currentUser,cartItems}= req.body;
+    const {order}= req.body;
     
     try {
-        const customer= await stripe.customers.create({
-
-            email: token.email,
-            source:token.id
-        })
-
-        const payment= await stripe.charges.create({
-            amount: Math.floor(subtotal)*100,
-            currency: 'usd',
-            customer: customer.id,
-            receipt_email: token.email,
-            // payment_method_types: ['card'],
-        },
-        { idempotencyKey: uuidv4()}
-        );
-
-      if(payment){ 
-
-         const newOrder= new Order({
-             name : currentUser.name,
-             email : currentUser.email,
-             userid : currentUser._id,
-             orderItems : cartItems,
-             orderAmount : subtotal,
-             shippingAddress : {
-
-                street : token.card.address_line1,
-                city : token.card.address_city,
-                country : token.card.address_country,
-                pincode :token.card.address_zip
-             },
-             transactionId : token.id
-         })
-
+        
+         const newOrder= new Order(order)
+         console.log("BACKEND ORDER ",newOrder, " \n ",order);
          newOrder.save();
          res.send('Payment Completed')
-         
-      }
-      else {
-          res.send('Payment Failed')
-      }
 
     } catch (error) {
           res.status(400).json({ status: 'error',message: error});
@@ -66,7 +30,7 @@ router.get('/getuserorders', async(req, res) => {
 
     try {
         const orders = await Order.find({'userid': userid})
-        // console.log( "orders OBEJCT = ", orders );
+        console.log( "orders OBEJCT = ", orders );
         res.send(orders)
 
     } catch (error) {

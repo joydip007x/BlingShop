@@ -1,24 +1,61 @@
 
 .emni{
 
-    margin-top: 42%;
-    margin-left: 93% ;
-    size: 40px;
+    margin-top: 2.9%;
+    margin-left: 90% ;
+    size: 30px !important;
     width: fit-content;
     background-color: transparent;
     z-index: 1;
 
   
 }
-
+h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px !important;
+    color: antiquewhite;
+}
 .fa-shopping-basket{
 
-    font-size: 40px;
+    font-size: 30px !important;
     color: rgb(255, 255, 255);
+    margin-right: 20% !important;
 }
 .fa-cart-plus{
 
     font-size: 30px ;
-    margin-top: 25%;
     color: aliceblue;
+    padding-top: 1.5%;
+}
+.fa-cart-plus:hover{
+
+   
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.margTop{
+
+    margin-top: 9% !important;
+}
+
+.fa-list-ul{
+  
+    font-size: 30px ;
+    margin-top: 1.2%;
+    color: aliceblue;
+}
+.fa-list-ul:hover{
+
+    color: rgb(5, 5, 6);
+    cursor: pointer;
+}
+#some1{
+
+    margin-top: 15% !important;
+    width: 105%;
+    background-color: transparent;
+}
+gg{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-weight: 100;
 }

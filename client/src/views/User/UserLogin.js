@@ -77,7 +77,7 @@ export default function UserLogin() {
          </div>
          <div><button class='ghost-round full-width' onClick={loginWithUser} > Log in </button></div>
        </div>
-       <i class="fas fa-user-plus" onClick={ redi }></i>
+       <i class="fas fa-user-plus" onClick={ redi }>SignUp</i>
 
      </div>
    </div>

@@ -23,23 +23,23 @@ export default function Product({product}) {
   function addToCartHandle(){
     if (!localStorage.getItem('currentUser')){ return checkUser()}
     dispatch(addToCart(product,quantity,varient!='null' ? varient:defaultVarient));
+    alert("Added "+product.name  +"  to Cart")
   }
 
   return (
 
     <div className="Spizza_container  p-3 mb-5  rounded" >
-      <h1 className="html_h1">{product.name}</h1>
       <img src={product.image} className="img-fluid single_el_img" />
 
       <div className="flex-container">
         <div className="w-100 m-1">
-
-          <p>Varients</p>
+        <h1 className="html_h1">{product.name}</h1>
+          <p id="variTxt">Varients</p>
           <select className='flex_class_option form-control' initial  value={varient} 
           onChange={(e)=>{setvarient(e.target.value)}}>
             
             {product.varients.map((varient) => {
-              return <option value={varient}> {varient}</option>;
+              return <option id="opid" value={varient}> {varient}</option>;
             })}
           </select>
 
@@ -47,19 +47,14 @@ export default function Product({product}) {
        
       </div>
      
-      <div class="flex-container"> 
-          
-          <div className='Pizprices m-1 w-100 '>
-                <html_h2 className="mt-1">
-                  Price : {CalculatedPrice} BDT/=
-                </html_h2>
-          </div>
-
-          <div className='m-1 w-100'>
-              <div className="btn" onClick={addToCartHandle}>Add to Cart</div>
-          </div>
+      
+      <html_h2 className="mt-1">
+        Price : {CalculatedPrice} BDT/=
+      </html_h2>
+       
+      <div className='m-1 w-100 mvAc'>
+              <div className="editBTN" onClick={addToCartHandle}>Add to  Cart</div>
        </div>
-
      
     </div>
   );

@@ -27,9 +27,11 @@ router.post("/login",async(req,res)=>{
 
             const CurrentUser={
                 name:user[0].name,
+                password:user[0].password,
                 email:user[0].email,
+                bdt:user[0].bdt,
                 isAdmin : user[0].isAdmin,
-                _id: user[0]._id
+                _id: user[0]._id,
             }
             
             res.send(CurrentUser);
@@ -43,6 +45,61 @@ router.post("/login",async(req,res)=>{
     }
 });
 
+router.get("/getUID",async(req,res)=>{
+
+    const email = req.query.user;
+    // console.log( req.query.user)
+    // console.log(" BEFORE EMAIL request : ",email);
+
+    try{
+        result= await User.findOne({'email':email});
+        res.send(result)
+    }
+    catch(error){
+        return res.status(400).json({ message:error});
+    }
+});
+
+
+router.post("/updateAdminBalance",async(req,res)=>{
+
+    const {email,amount}= req.body;
+    console.log( "OK OK ",email)
+    console.log( "OK OK ",amount)
+
+    try {
+        res= await User.updateOne(
+            { 'email' : email },
+            { $inc: { 'bdt': -amount } }
+        );
+        res=await User.updateOne(
+            { 'email' : 'supply@example.com' },{ $inc: { 'bdt': amount } }
+            );
+    } catch (error) {
+        
+    }
+
+})
+
+router.post("/updateBalance",async(req,res)=>{
+
+    const {email,amount}= req.body;
+     console.log( "OK OK ",email)
+     console.log( "OK OK ",amount)
+
+    try {
+        res= await User.updateOne(
+            { 'email' : email },
+            { $inc: { 'bdt': -amount } }
+        );
+        res=await User.updateOne(
+            { 'email' : 'admin@admin.com' },{ $inc: { 'bdt': amount } }
+            );
+    } catch (error) {
+        
+    }
+
+})
 
 
 module.exports = router
