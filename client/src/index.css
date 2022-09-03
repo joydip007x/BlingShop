@@ -23,7 +23,9 @@ code {
     monospace;
 }
 .dropdown-backdrop{
+
   position: static;
+  
 }
 
 input{
@@ -230,7 +232,9 @@ input:focus{
 .dropdown-menu {
   margin-left: -38px !important;
   margin-top: 25px !important;
-  background-color: transparent !important;
+  /* background-image: linear-gradient(to right top,  #008793, #00bf72, #a8eb12); */
+  color: rgb(255, 255, 255) !important;
+
 }
 .whole_navbar{
   padding-block-end:90px !important;

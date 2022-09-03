@@ -21,13 +21,13 @@ h3{
     color: rgb(255, 255, 255);
     margin-right: 20% !important;
 }
-.fa-cart-plus{
+.fa-cart-plus,.fa-sign-out {
 
-    font-size: 30px ;
+    font-size: 30px !important;
     color: aliceblue;
     padding-top: 1.5%;
 }
-.fa-cart-plus:hover{
+.fa-cart-plus:hover, .fa-sign-out:hover{
 
    
     color: rgb(0, 0, 0);

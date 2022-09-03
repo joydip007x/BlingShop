@@ -52,24 +52,24 @@ export default function Navbar() {
               </a>
         </li>
 
-          <Card className="x556">
+          <Card class="x556">
           
             { (currentUser || currentAdmin) ? 
             (
-
+              (currentUser)?
               <div id="x333"><button type="button"  
               onClick={()=>{ window.location.href='/orders'}}
-              href="/orders"> MY Orders</button>
+              href="/orders">Orders</button>
               <button  type="button"
               onClick={ doIT}
-              >LogOut</button></div>
+              >LogOut</button></div>:
+              (<div></div>)
               
 
             ):   /* ################ */
             <div class="dropdown">
               <a class="userBtn dropdown-toggle  "  id="dropdownMenu2" data-bs-toggle="dropdown" >
             
-
                 <ph id="okok">LOGIN</ph>  
               </a>
               <ul class="dropdown-menu"  aria-labelledby="dropdownMenu">
@@ -78,6 +78,8 @@ export default function Navbar() {
                 href="/admin"   onClick={()=>{ window.location.href='/admin'}} >as Admin</button></a>
                 <a><button class="dropdown-item" type="button"
                  href="/login"   onClick={()=>{ window.location.href='/login'}}>as User</button></a>
+                <a><button class="dropdown-item" type="button"
+                 href="/login"   onClick={()=>{ window.location.href='/loginSupplier'}}>as Supplier</button></a>
               </ul>  
             </div>
             

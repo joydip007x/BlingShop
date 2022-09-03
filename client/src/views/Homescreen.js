@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AdminLogin from './Admin/AdminLogin';
 import "./Homescreen.css"
 import { Card } from 'react-bootstrap';
+import { logoutAdmin } from '../actions/adminAction';
 
 export default function Homescreen() {
 
@@ -44,6 +45,9 @@ function redi2(){
                   <i class="fa fa-list-ul fa-2x" aria-hidden="true"  onClick={ redi2 }> <gg>VERIFY ORDERS</gg></i>
                   <br></br>
                   <i class="fas fa-cart-plus" onClick={ redi }> <gg>ADD ITEM</gg></i>
+                  <br></br>
+                  <i class="fa fa-sign-out" onClick={ ()=>dispatch(logoutAdmin()) }> <gg>Log Out</gg></i>
+
                 </div>  
            </p></div> ): 
         

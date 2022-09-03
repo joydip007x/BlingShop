@@ -9,9 +9,9 @@ module.exports = function(app) {
     })
   );
   app.use(
-    '/bankAPI',
+    '/supplyAPI',
     createProxyMiddleware({
-      target: 'http://localhost:9000',
+      target: 'http://localhost:7000',
       changeOrigin: true,
     })
   );
